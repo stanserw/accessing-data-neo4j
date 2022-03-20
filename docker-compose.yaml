@@ -1,0 +1,17 @@
+version: "4.4.3"
+services:
+  neo4jdb:
+    image: neo4j:latest
+    container_name: neo4jdb
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - data:/data
+    environment:
+      NEO4J_AUTH: 'neo4j/secret'
+volumes:
+  data: {}
+networks:
+  default:
+    name: neo4jdb_network
